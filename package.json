@@ -7,6 +7,7 @@
     "bump-cli": "^2.5.0",
     "cors": "^2.8.5",
     "express": "^4.18.2",
-    "express-openapi": "^12.1.0"
+    "express-openapi": "^12.1.0",
+    "fs-routes": "^12.0.0"
   }
 }
