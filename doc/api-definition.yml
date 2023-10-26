@@ -1,0 +1,103 @@
+openapi: 3.0.0
+info:
+  title: A getting started API.
+  version: 1.0.0
+servers:
+  - url: /
+paths:
+  /jira:
+    parameters: []
+    get:
+      summary: Returns list of BAs defined on JIRA
+      operationId: getBAs
+      responses:
+        '200':
+          description: List of Business Applications
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BusinessApplication'
+    post:
+      summary: Creates a BA on Jira
+      operationId: createBA
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BusinessApplication'
+      responses:
+        '201':
+          description: Newly created BA
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BusinessApplication'
+  /jira/{bacode}:
+    parameters: []
+    get:
+      summary: Returns a single BA
+      operationId: getOneBA
+      parameters:
+        - name: bacode
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: BA data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BusinessApplication'
+    put:
+      summary: Updates an existing user
+      operationId: updateBA
+      parameters:
+        - name: bacode
+          in: path
+          schema:
+            type: string
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BusinessApplication'
+      responses:
+        '200':
+          description: Updated user
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BusinessApplication'
+    delete:
+      summary: Deletes an existing BA
+      operationId: deleteBA
+        - name: bacode
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: No content
+          content: {}
+components:
+  schemas:
+    BusinessApplication:
+      required:
+        - bacode
+      type: object
+      properties:
+        bacode:
+          type: string
+          description: Unique ID for the BA
+        name:
+          type: string
+          description: BA Name
+        owner_email:
+          type: string
+          description: Owner email

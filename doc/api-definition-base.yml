@@ -1,0 +1,22 @@
+openapi: "3.0.0"
+info:
+  title: "Jira - UCMDB Integration API"
+  version: "1.0.0"
+servers:
+  - url: "/"
+paths: {}
+components:
+  schemas:
+    BusinessApplication:
+      required: ["bacode"]
+      type: "object"
+      properties:
+        bacode:
+          type: "string"
+          description: "Unique ID for the BA"
+        name:
+          type: "string"
+          description: "BA Name"
+        owner_email:
+          type: "string"
+          description: "Owner email"

@@ -1,0 +1,12 @@
+{
+  "name": "express-oas",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {},
+  "dependencies": {
+    "bump-cli": "^2.5.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-openapi": "^12.1.0"
+  }
+}
