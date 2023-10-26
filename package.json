@@ -1,6 +1,6 @@
 {
   "name": "express-oas",
-  "type": "module",
+  "type": "commonjs",
   "main": "index.js",
   "scripts": {},
   "dependencies": {
